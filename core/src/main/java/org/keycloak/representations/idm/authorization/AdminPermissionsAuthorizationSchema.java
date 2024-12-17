@@ -24,7 +24,8 @@ public class AdminPermissionsAuthorizationSchema extends AuthorizationSchema {
     public static final AdminPermissionsAuthorizationSchema INSTANCE = new AdminPermissionsAuthorizationSchema();
 
     private AdminPermissionsAuthorizationSchema() {
-        super(new ResourceType("Users", new HashSet<>(Arrays.asList("manage"))));
+        super(new ResourceType("Users", new HashSet<>(Arrays.asList("manage"))),
+              new ResourceType("Groups", new HashSet<>(Arrays.asList("manage", "manage-members", "manage-membership", "view", "view-members"))));
     }
 
 }
